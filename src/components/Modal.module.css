@@ -1,0 +1,28 @@
+.overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.65); z-index: 500;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(8px);
+}
+.modal {
+  background: var(--ink2); border: 1px solid var(--border); border-radius: .9rem;
+  padding: 2rem; width: 92%; max-width: 520px; max-height: 88vh; overflow-y: auto;
+}
+.modal h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--white); margin-bottom: 1.4rem; }
+.field { margin-bottom: 1.1rem; }
+.field label { display: block; font-size: .68rem; color: var(--sky); letter-spacing: .12em;
+  text-transform: uppercase; margin-bottom: .4rem; font-family: 'JetBrains Mono', monospace; }
+.field input, .field textarea, .field select {
+  width: 100%; background: rgba(12,15,26,.8); border: 1px solid var(--border);
+  border-radius: .35rem; padding: .65rem .9rem; color: var(--white);
+  font-size: .86rem; font-family: 'DM Sans', sans-serif; outline: none; transition: border-color .2s;
+}
+.field input:focus, .field textarea:focus { border-color: var(--sky); }
+.field textarea { resize: vertical; min-height: 72px; }
+.actions { display: flex; justify-content: flex-end; gap: .7rem; margin-top: 1.4rem; }
+.cancel { padding: .55rem 1.3rem; border-radius: .35rem; border: 1px solid var(--border);
+  background: transparent; color: var(--silver); font-family: 'DM Sans', sans-serif;
+  font-size: .83rem; cursor: pointer; }
+.confirm { padding: .55rem 1.3rem; border-radius: .35rem; border: 1px solid var(--blue);
+  background: var(--blue); color: white; font-family: 'DM Sans', sans-serif;
+  font-size: .83rem; cursor: pointer; font-weight: 600; }
+.confirm:hover { background: #1d4ed8; }

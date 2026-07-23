@@ -1,0 +1,80 @@
+.heroSection { position: relative; z-index: 1; }
+.hero {
+  min-height: 100vh; display: grid; grid-template-columns: 1fr 380px;
+  align-items: center; padding: 7rem 3rem 4rem; gap: 3rem;
+  max-width: 1260px; margin: 0 auto;
+}
+.textSide { animation: fadeUp .8s ease both; }
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace; font-size: .68rem; color: var(--sky);
+  letter-spacing: .18em; text-transform: uppercase; margin-bottom: 1.2rem;
+  display: flex; align-items: center; gap: .6rem;
+}
+.eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--sky); }
+.name {
+  font-family: 'DM Serif Display', serif; font-size: clamp(3.2rem, 6vw, 5.5rem);
+  line-height: 1.05; color: var(--white); margin-bottom: .6rem; font-weight: 400;
+}
+.roleTag {
+  display: inline-flex; align-items: center; gap: .5rem; font-family: 'JetBrains Mono', monospace;
+  font-size: .72rem; color: var(--sky); letter-spacing: .12em; text-transform: uppercase;
+  margin-bottom: 1.6rem; background: rgba(56,189,248,.07); border: 1px solid rgba(56,189,248,.18);
+  border-radius: 2rem; padding: .3rem .9rem;
+}
+.roleTag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--mint); animation: pulse 2s infinite; }
+.bio { font-size: .97rem; color: var(--silver); line-height: 1.85; max-width: 500px; margin-bottom: 1.8rem; }
+.skills { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2.2rem; }
+.pill {
+  font-size: .75rem; color: var(--sky); border: 1px solid rgba(56,189,248,.2);
+  border-radius: 2rem; padding: .25rem .75rem; background: rgba(56,189,248,.05);
+  font-family: 'JetBrains Mono', monospace; display: inline-flex; align-items: center; gap: .3rem;
+}
+.pillDel { background: none; border: none; color: var(--red); cursor: pointer; font-size: .65rem; padding: 0 0 0 .3rem; }
+.addSkillBtn {
+  font-size: .75rem; color: var(--mint); border: 1px dashed rgba(52,211,153,.3);
+  border-radius: 2rem; padding: .25rem .75rem; background: transparent; cursor: pointer;
+  font-family: 'JetBrains Mono', monospace; align-items: center; gap: .3rem;
+}
+.ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+.ctaPrimary {
+  background: var(--blue); color: white; padding: .75rem 1.7rem; border-radius: .4rem;
+  text-decoration: none; font-weight: 600; font-size: .88rem; transition: all .3s;
+  box-shadow: 0 0 22px rgba(37,99,235,.3); display: inline-block;
+}
+.ctaPrimary:hover { background: #1d4ed8; transform: translateY(-2px); }
+.ctaGhost {
+  background: transparent; color: var(--sky); border: 1px solid rgba(56,189,248,.25);
+  padding: .75rem 1.7rem; border-radius: .4rem; text-decoration: none; font-weight: 500;
+  font-size: .88rem; transition: all .3s; display: inline-block;
+}
+.ctaGhost:hover { background: rgba(56,189,248,.06); border-color: var(--sky); }
+
+/* Photo */
+.photoBox { animation: fadeUp .8s .2s ease both; }
+.photoFrame {
+  width: 100%; aspect-ratio: 3/4; background: var(--card); border-radius: 1rem;
+  border: 1px solid var(--border); overflow: hidden; display: flex; align-items: center;
+  justify-content: center; flex-direction: column; gap: .8rem; position: relative;
+}
+.photoPh { display: flex; flex-direction: column; align-items: center; gap: .6rem; color: var(--muted); }
+.photoPh svg { opacity: .2; width: 60px; height: 60px; }
+.photoPh span { font-size: .78rem; color: var(--silver); }
+.photoImg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.photoOverlay {
+  position: absolute; inset: 0; background: rgba(12,15,26,.75);
+  display: flex; align-items: center; justify-content: center; flex-direction: column; gap: .6rem;
+  font-size: .82rem; color: var(--sky); cursor: pointer;
+}
+.corner { position: absolute; width: 18px; height: 18px; border-color: rgba(56,189,248,.35); }
+.tl { top: .8rem; left: .8rem; border-top: 1.5px solid; border-left: 1.5px solid; }
+.tr { top: .8rem; right: .8rem; border-top: 1.5px solid; border-right: 1.5px solid; }
+.bl { bottom: .8rem; left: .8rem; border-bottom: 1.5px solid; border-left: 1.5px solid; }
+.br { bottom: .8rem; right: .8rem; border-bottom: 1.5px solid; border-right: 1.5px solid; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; padding: 6rem 2rem 3rem; }
+  .photoBox { display: none; }
+}

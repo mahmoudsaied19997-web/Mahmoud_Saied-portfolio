@@ -1,0 +1,101 @@
+:root {
+  --ink: #0c0f1a;
+  --ink2: #141827;
+  --card: #1a1f35;
+  --blue: #2563eb;
+  --sky: #38bdf8;
+  --mint: #34d399;
+  --silver: #8892a4;
+  --muted: #4b5568;
+  --light: #cbd5e1;
+  --white: #f1f5f9;
+  --border: rgba(56, 189, 248, 0.12);
+  --red: #ef4444;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ink);
+  color: var(--light);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 15% 10%, rgba(37,99,235,.07), transparent),
+    radial-gradient(ellipse 60% 40% at 85% 85%, rgba(56,189,248,.05), transparent);
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(56,189,248,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,189,248,.035) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* Edit hints */
+body.editing [data-editable] {
+  outline: 1px dashed rgba(56,189,248,.25);
+  border-radius: .2rem;
+  cursor: text;
+}
+body.editing [data-editable]:hover { background: rgba(56,189,248,.06); outline-color: rgba(56,189,248,.5); }
+body.editing [data-editable]:focus { background: rgba(56,189,248,.09); outline: 1px solid rgba(56,189,248,.6); }
+[data-editable] { outline: none; }
+
+/* Edit icon buttons */
+.ei { display: none !important; position: absolute; top: .5rem; right: .5rem; z-index: 10;
+  background: rgba(12,15,26,.9); border: 1px solid var(--border); border-radius: .3rem;
+  gap: .3rem; padding: .3rem; }
+body.editing .ei { display: flex !important; }
+.ei button { width: 26px; height: 26px; border-radius: .25rem; border: none;
+  background: transparent; color: var(--silver); font-size: .8rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; transition: all .2s; }
+.ei button:hover { background: rgba(56,189,248,.15); color: var(--sky); }
+.ei button.del:hover { background: rgba(239,68,68,.15); color: var(--red); }
+
+/* Add controls */
+.add-ctrl { display: none !important; }
+body.editing .add-ctrl { display: block !important; }
+.add-ctrl-flex { display: none !important; }
+body.editing .add-ctrl-flex { display: flex !important; }
+
+/* Add card */
+.add-card { display: none !important; }
+body.editing .add-card { display: flex !important; }
+
+/* Skill delete */
+.sk-del { display: none !important; }
+body.editing .sk-del { display: inline-flex !important; }
+
+/* Add skill btn */
+.add-skill-btn { display: none !important; }
+body.editing .add-skill-btn { display: inline-flex !important; }
+
+/* Add tool btn */
+.add-tool-btn { display: none !important; }
+body.editing .add-tool-btn { display: inline-flex !important; }
+
+/* Grad presets */
+.g1 { background: linear-gradient(135deg, #1e3a6e, #080f20); }
+.g2 { background: linear-gradient(135deg, #1a4d2a, #071509); }
+.g3 { background: linear-gradient(135deg, #451840, #140610); }
+.g4 { background: linear-gradient(135deg, #193a4a, #060e14); }
+.g5 { background: linear-gradient(135deg, #3a2808, #120d03); }
+.g6 { background: linear-gradient(135deg, #28184a, #090614); }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }

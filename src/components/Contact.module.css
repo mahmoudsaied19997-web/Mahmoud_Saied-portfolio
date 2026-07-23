@@ -1,0 +1,26 @@
+.eye { font-family: 'JetBrains Mono', monospace; font-size: .67rem; color: var(--sky);
+  letter-spacing: .2em; text-transform: uppercase; display: flex; align-items: center; gap: .5rem; margin-bottom: .7rem; }
+.eye::before { content: ''; width: 20px; height: 1px; background: var(--sky); }
+.title { font-family: 'DM Serif Display', serif; font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  color: var(--white); margin-bottom: 2.8rem; line-height: 1.1; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+.intro { color: var(--silver); line-height: 1.85; margin-bottom: 1.6rem; font-size: .93rem; }
+.card { display: flex; align-items: center; gap: 1rem; background: var(--card);
+  border: 1px solid var(--border); border-radius: .6rem; padding: .9rem 1.2rem;
+  text-decoration: none; color: var(--light); transition: all .3s; margin-bottom: .7rem; }
+.card:hover { border-color: rgba(56,189,248,.25); transform: translateX(-3px); }
+.ico { width: 38px; height: 38px; border-radius: .45rem; background: rgba(37,99,235,.12);
+  display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+.lbl { font-size: .7rem; color: var(--silver); display: block; margin-bottom: .1rem;
+  font-family: 'JetBrains Mono', monospace; letter-spacing: .06em; text-transform: uppercase; }
+.val { font-size: .86rem; font-weight: 500; }
+.socialLabel { color: var(--silver); font-size: .7rem; margin-bottom: 1rem;
+  letter-spacing: .1em; text-transform: uppercase; font-family: 'JetBrains Mono', monospace; }
+.socGrid { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
+.socBtn { display: flex; align-items: center; gap: .7rem; background: var(--card);
+  border: 1px solid var(--border); border-radius: .6rem; padding: .85rem 1rem;
+  text-decoration: none; color: var(--light); transition: all .3s; font-size: .83rem; }
+.socBtn:hover { border-color: rgba(56,189,248,.28); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.3); }
+.socIco { width: 32px; height: 32px; border-radius: .32rem; display: flex; align-items: center;
+  justify-content: center; font-size: .88rem; font-weight: 700; color: white; flex-shrink: 0; }
+@media (max-width: 1024px) { .grid { grid-template-columns: 1fr; gap: 2rem; } }
