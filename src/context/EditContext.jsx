@@ -9,35 +9,16 @@ export function EditProvider({ children }) {
   const [editMode, setEditMode] = useState(false)
   const [editVisible, setEditVisible] = useState(false)
 
-  // Reveal the Edit button via secret combo
-  const revealEdit = useCallback(() => {
-    setEditVisible(true)
-    showToast('✎ Edit mode available')
+  // Only reveal Edit button if URL contains ?edit=true
+  // No keyboard shortcut, no triple-click — nothing visible to visitors
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('edit') === 'true') {
+      setEditVisible(true)
+      // Clean the URL so it doesn't show ?edit=true to anyone watching
+      window.history.replaceState({}, '', window.location.pathname)
+    }
   }, [])
-
-  // Ctrl+Shift+E
-  useEffect(() => {
-    const handler = (e) => {
-      if (e.ctrlKey && e.shiftKey && e.key === 'E') revealEdit()
-    }
-    document.addEventListener('keydown', handler)
-    return () => document.removeEventListener('keydown', handler)
-  }, [revealEdit])
-
-  // Triple-click on footer
-  useEffect(() => {
-    let clicks = 0, timer
-    const handler = (e) => {
-      if (e.target.closest('.footer-wrap')) {
-        clicks++
-        clearTimeout(timer)
-        timer = setTimeout(() => (clicks = 0), 600)
-        if (clicks >= 3) { revealEdit(); clicks = 0 }
-      }
-    }
-    document.addEventListener('click', handler)
-    return () => document.removeEventListener('click', handler)
-  }, [revealEdit])
 
   // Toggle edit mode with password
   const toggleEdit = useCallback(() => {
