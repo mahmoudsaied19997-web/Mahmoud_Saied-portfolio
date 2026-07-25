@@ -5,7 +5,7 @@ import styles from './Hero.module.css'
 
 export default function Hero() {
   const { editMode } = useEdit()
-  const [photo, setPhoto] = useState(null)
+  const [photo, setPhoto] = useState('/photo.jpg')
   const fileRef = useRef()
 
   const handlePhoto = (e) => {

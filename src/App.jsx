@@ -144,7 +144,7 @@ export default function App() {
           <div className="s-eye" data-editable="true">03 / Selected Work</div>
           <h2 className="s-title" data-editable="true">Storyboards, Games<br />&amp; Learning Experiences</h2>
           <div className="port-grid" id="portGrid">
-            <PortCard grad="g1" emoji="🌍" type="Educational Game" title="Africa Plateaus Game" desc="Interactive game exploring Africa's terrain using problem-solving and resource management mechanics." tags={['Gamification','Storyboard','Geography']} />
+            <PortCard grad="g1" emoji="🌍" type="Educational Game" title="The Pearl Hunting Game" desc="Collect electricity from the grid by answering the questions correctly." tags={['Gamification','Storyboard','Geography']}  sbLink="https://oman_soc - Google Drive"/>
             <PortCard grad="g2" emoji="🏛️" type="E-Learning Module" title="African Union & Economic Blocs" desc="Flashcard sets and interactive scenarios covering African economic blocs with varied patterns." tags={['Flashcards','Scenario','Africa']} />
             <PortCard grad="g3" emoji="🎙️" type="Voiceover Script" title="Colloquial Arabic Scripts" desc="Converting formal texts into scene-structured colloquial scripts with transition phrases for video production." tags={['Scripting','Voiceover','Video']} />
             <PortCard grad="g4" emoji="📊" type="Simulation" title="Africa Population Growth Sim" desc="Resource management game examining population growth causes through decision-making mechanics." tags={['Simulation','Decision-Making','Demographics']} />
