@@ -145,20 +145,28 @@ export default function App() {
             <PortCard grad="g6" emoji="🌌" type="3D Interactive" title="Cosmic Journey: From Galaxies to Moons"
               desc="A scientific 3D journey from the Local Group of galaxies through the Milky Way to the Solar System's planets and moons, running on a live real-time clock."
               tags={['3D Interactive','Astronomy','AI-Assisted']}
-              gameLink="https://cosmic-journey-rho.vercel.app" gameLabel="🚀 Interactive" />
+              gameLink="https://cosmic-journey-rho.vercel.app" gameLabel="🚀 Interactive"
+              sbLink="https://mahmoud-saied-portfolio.vercel.app/scripts/cosmic-journey-storyboard.pdf" />
             <PortCard grad="g1" emoji="🪐" type="3D Interactive" title="Solar Odyssey: Space Explorer"
               desc="Explore the Sun, the planets and their major moons in 3D using NASA JPL data, then zoom out to the Milky Way and nearby galaxies, with a full Arabic interface."
               tags={['3D Interactive','Solar System','AI-Assisted']}
-              gameLink="https://rihla-space-explorer.vercel.app" gameLabel="🚀 Interactive" />
+              gameLink="https://rihla-space-explorer.vercel.app" gameLabel="🚀 Interactive"
+              sbLink="https://mahmoud-saied-portfolio.vercel.app/scripts/solar-odyssey-storyboard.pdf" />
             <PortCard grad="g2" emoji="🕸️" type="3D Educational Game" title="Nassaj: Threads of Knowledge"
               desc="A 3D voxel adventure where learners guide Nassaj the spider across 10 floating islands, answering science questions to weave bridges and bring light back to the garden."
               tags={['3D Game','Science','AI-Assisted']}
-              gameLink="https://khuyoot-al-maarifa.vercel.app" />
+              gameLink="https://khuyoot-al-maarifa.vercel.app"
+              sbLink="https://mahmoud-saied-portfolio.vercel.app/scripts/nassaj-threads-of-knowledge-storyboard.pdf" />
             <PortCard grad="g5" emoji="🏍️" type="3D Educational Game" title="Race of Knowledge: Answer, Upgrade, Win"
               desc="A 3D racing game where every correct answer installs a real part on the learner's motorcycle and every wrong one helps the rival, ending in a cinematic race decided by performance."
               tags={['3D Game','Social Studies','AI-Assisted']}
               gameLink="https://race-of-knowledge.vercel.app"
               sbLink="https://mahmoud-saied-portfolio.vercel.app/scripts/race-of-knowledge-storyboard.pdf" />
+            <PortCard grad="g4" emoji="📖" type="2D Educational Game" title="Quest for the Lost Book"
+              desc="A 2D pixel-art adventure in first person: build a raft, climb the mountain and rescue a friend, where every tool is unlocked by answering a school question in Arabic, Science, Math or English."
+              tags={['2D Game','Multi-subject','AI-Assisted']}
+              gameLink="https://quest-for-knowledge-2d.vercel.app"
+              sbLink="https://mahmoud-saied-portfolio.vercel.app/scripts/quest-for-the-lost-book-storyboard.pdf" />
             <PortCard grad="g1" emoji="🌍" type="Educational Game" title="The Pearl Hunting Game" desc="Collect electricity from the grid by answering the questions correctly." tags={['Gamification','Storyboard','Geography']}  sbLink="https://oman_soc - Google Drive"/>
             <PortCard grad="g2" emoji="🏛️" type="E-Learning Module" title="African Union & Economic Blocs" desc="Flashcard sets and interactive scenarios covering African economic blocs with varied patterns." tags={['Flashcards','Scenario','Africa']} />
             <PortCard grad="g3" emoji="🎙️" type="Voiceover Script" title="Colloquial Arabic Scripts" desc="Converting formal texts into scene-structured colloquial scripts with transition phrases for video production." tags={['Scripting','Voiceover','Video']} />
