@@ -2,7 +2,8 @@
 // In source code — no real values visible
 export const CONTACT = {
   phone:     import.meta.env.VITE_PHONE,
-  email:     import.meta.env.VITE_EMAIL,
+  email:     import.meta.env.VITE_EMAIL,          // personal Gmail (Gmail button)
+  workEmail: import.meta.env.VITE_WORK_EMAIL || import.meta.env.VITE_EMAIL, // Selaheltelmeez email (Email card)
   whatsapp:  import.meta.env.VITE_WHATSAPP,
   linkedin:  import.meta.env.VITE_LINKEDIN,
   drive:     import.meta.env.VITE_PORTFOLIO_DRIVE,

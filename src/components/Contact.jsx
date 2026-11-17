@@ -25,11 +25,11 @@ export default function Contact() {
               </div>
             </a>
 
-            <a href={`mailto:${CONTACT.email}`} className={styles.card}>
+            <a href={`mailto:${CONTACT.workEmail}`} className={styles.card}>
               <div className={styles.ico}>✉️</div>
               <div>
                 <span className={styles.lbl}>Email</span>
-                <strong className={styles.val}>{CONTACT.email}</strong>
+                <strong className={styles.val}>{CONTACT.workEmail}</strong>
               </div>
             </a>
 
@@ -62,13 +62,14 @@ export default function Contact() {
                 <div className={styles.socIco} style={{ background: '#25D366' }}>💬</div>
                 WhatsApp
               </a>
-              <a href={`mailto:${CONTACT.email}`} className={styles.socBtn}>
+              <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(CONTACT.email || '')}`}
+                target="_blank" rel="noreferrer" className={styles.socBtn}>
                 <div className={styles.socIco} style={{ background: '#EA4335' }}>✉</div>
                 Gmail
               </a>
               <a href={CONTACT.drive} target="_blank" rel="noreferrer" className={styles.socBtn}>
                 <div className={styles.socIco} style={{ background: '#4285F4' }}>▶</div>
-                Portfolio
+                Drive
               </a>
             </div>
           </div>
