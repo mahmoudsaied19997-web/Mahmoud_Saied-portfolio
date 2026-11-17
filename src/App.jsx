@@ -21,7 +21,7 @@ function saveAll() {
       coursesGrid: document.getElementById('coursesGrid')?.innerHTML || '',
       toolsWrap: document.getElementById('toolsWrap')?.innerHTML || '',
     }
-    localStorage.setItem('msPort_v3', JSON.stringify(data))
+    localStorage.setItem('msPort_v4', JSON.stringify(data))
     showToast('✓ Saved!')
   } catch (e) {
     showToast('Could not save — try again')
@@ -30,7 +30,7 @@ function saveAll() {
 
 function loadSaved() {
   try {
-    const raw = localStorage.getItem('msPort_v3')
+    const raw = localStorage.getItem('msPort_v4')
     if (!raw) return
     const d = JSON.parse(raw)
     const set = (id, val) => { const el = document.getElementById(id); if (el && val) el.innerHTML = val }
@@ -87,15 +87,14 @@ export default function App() {
             <div className="skills-panel">
               <div className="sp-head" data-editable="true">Core Competencies</div>
               <div id="skillRows">
-                {[['Instructional Design',90],['Storyboarding',88],['Gamification',85],
-                  ['Needs Analysis',85],['Articulate Storyline',80],['Video Production',75],['QA Review',82]
-                ].map(([name, pct]) => (
+                {['Instructional Design','Storyboarding','Gamification','Needs Analysis',
+                  'Articulate Storyline','Video Production','QA Review','AI Tools Integration'
+                ].map(name => (
                   <div key={name} className="sk-r">
                     <div className="sk-h">
                       <span className="sk-name" data-editable="true">{name}</span>
-                      <span className="sk-pct" data-editable="true">{pct}%</span>
                     </div>
-                    <div className="sk-track"><div className="sk-fill" data-w={pct} /></div>
+                    <div className="sk-track" />
                     <button className="sk-del" onClick={e => e.target.closest('.sk-r').remove()}>✕</button>
                   </div>
                 ))}
@@ -103,10 +102,9 @@ export default function App() {
               <div className="add-ctrl" style={{ marginTop: '.8rem' }}>
                 <button className="add-btn-sm" onClick={() => {
                   const name = prompt('Skill name:'); if (!name) return
-                  const pct = parseInt(prompt('Percentage (0-100):') || '70')
                   const rows = document.getElementById('skillRows')
                   const row = document.createElement('div'); row.className = 'sk-r'
-                  row.innerHTML = `<div class="sk-h"><span class="sk-name" data-editable contenteditable="true">${name}</span><span class="sk-pct" data-editable contenteditable="true">${pct}%</span></div><div class="sk-track"><div class="sk-fill" data-w="${pct}" style="width:${pct}%"></div></div><button class="sk-del" onclick="this.closest('.sk-r').remove()">✕</button>`
+                  row.innerHTML = `<div class="sk-h"><span class="sk-name" data-editable contenteditable="true">${name}</span></div><div class="sk-track"></div><button class="sk-del" onclick="this.closest('.sk-r').remove()">✕</button>`
                   rows.appendChild(row)
                 }}>+ Add Skill</button>
               </div>
@@ -125,7 +123,7 @@ export default function App() {
           </div>
           <div className="exp-list" id="expList">
             <ExpCard date="Sep 2024 — Present" badge="bf" badgeLabel="Full-time" company="Selaheltelmeez" title="Instructional Designer"
-              duties={['Conducting Needs Analysis to identify learning gaps and design targeted solutions','Developing storyboards guiding creation of interactive learning materials','Reviewing graphic designs and media to ensure alignment with learning objectives','Performing Quality Assurance (QA) to verify content accuracy and effectiveness','Designing innovative concepts for videos, educational games, and interactive elements']} />
+              duties={['Conducting Needs Analysis to identify learning gaps and design targeted solutions','Developing storyboards guiding creation of interactive learning materials','Reviewing graphic designs and media to ensure alignment with learning objectives','Performing Quality Assurance (QA) to verify content accuracy and effectiveness','Designing innovative concepts for videos, educational games, and interactive elements','Integrating AI tools into instructional design and creative production workflows, including educational game development, graphic design, motion graphics, video production, and interactive content creation']} />
             <ExpCard date="Jul 2024 — Sep 2024" badge="bfr" badgeLabel="Freelance" company="almentor" title="Instructional Designer"
               duties={['Designing and creating digital educational content for students','Researching, processing, and developing video content','Designing gamification and interaction to enhance learner experience','Collaborating with the team to reach best outcomes']} />
             <ExpCard date="Mar 2024 — Aug 2024" badge="bf" badgeLabel="Full-time" company="Kayfa" title="Instructional Designer"
@@ -144,6 +142,18 @@ export default function App() {
           <div className="s-eye" data-editable="true">03 / Selected Work</div>
           <h2 className="s-title" data-editable="true">Storyboards, Games<br />&amp; Learning Experiences</h2>
           <div className="port-grid" id="portGrid">
+            <PortCard grad="g6" emoji="🌌" type="3D Interactive" title="Cosmic Journey: From Galaxies to Moons"
+              desc="A scientific 3D journey from the Local Group of galaxies through the Milky Way to the Solar System's planets and moons, running on a live real-time clock."
+              tags={['3D Interactive','Astronomy','AI-Assisted']}
+              gameLink="https://cosmic-journey-rho.vercel.app" gameLabel="🚀 Interactive" />
+            <PortCard grad="g1" emoji="🪐" type="3D Interactive" title="Solar Odyssey: Space Explorer"
+              desc="Explore the Sun, the planets and their major moons in 3D using NASA JPL data, then zoom out to the Milky Way and nearby galaxies, with a full Arabic interface."
+              tags={['3D Interactive','Solar System','AI-Assisted']}
+              gameLink="https://rihla-space-explorer.vercel.app" gameLabel="🚀 Interactive" />
+            <PortCard grad="g2" emoji="🕸️" type="3D Educational Game" title="Nassaj: Threads of Knowledge"
+              desc="A 3D voxel adventure where learners guide Nassaj the spider across 10 floating islands, answering science questions to weave bridges and bring light back to the garden."
+              tags={['3D Game','Science','AI-Assisted']}
+              gameLink="https://khuyoot-al-maarifa.vercel.app" />
             <PortCard grad="g1" emoji="🌍" type="Educational Game" title="The Pearl Hunting Game" desc="Collect electricity from the grid by answering the questions correctly." tags={['Gamification','Storyboard','Geography']}  sbLink="https://oman_soc - Google Drive"/>
             <PortCard grad="g2" emoji="🏛️" type="E-Learning Module" title="African Union & Economic Blocs" desc="Flashcard sets and interactive scenarios covering African economic blocs with varied patterns." tags={['Flashcards','Scenario','Africa']} />
             <PortCard grad="g3" emoji="🎙️" type="Voiceover Script" title="Colloquial Arabic Scripts" desc="Converting formal texts into scene-structured colloquial scripts with transition phrases for video production." tags={['Scripting','Voiceover','Video']} />
@@ -164,6 +174,7 @@ export default function App() {
           <div className="s-eye" data-editable="true">04 / Learning</div>
           <h2 className="s-title" data-editable="true">Courses &amp;<br />Certifications</h2>
           <div className="courses-grid" id="coursesGrid">
+            <CourseCard platform="Meska AI" title="AI Training" />
             <CourseCard platform="MaharaTech" title="Instructional Design · E-learning Fundamentals · Gamification in eLearning · Computer Network Fundamentals" />
             <CourseCard platform="Edraak" title="Advanced Skills in Educational Technology · Gamification" />
             <CourseCard platform="LinkedIn Learning" title="Learning Articulate Storyline 3 · Storyboarding" />
@@ -189,10 +200,10 @@ export default function App() {
           <div className="s-eye" data-editable="true">05 / Toolkit</div>
           <h2 className="s-title" data-editable="true">Tools &amp;<br />Software</h2>
           <div className="tools-wrap" id="toolsWrap">
-            {[['🎯','Articulate Storyline'],['🎬','Adobe After Effects'],['✂️','Adobe Premiere'],
+            {[['🤖','AI tools'],['🎯','Articulate Storyline'],['🎬','Adobe After Effects'],['✂️','Adobe Premiere'],
               ['🖼️','Adobe Photoshop'],['✒️','Adobe Illustrator'],['📄','Adobe InDesign'],
               ['📚','Adobe Captivate'],['🎥','Camtasia Studio'],['⬛','OBS Studio'],
-              ['🖥️','Course Lab'],['📊','LMS'],['💼','Microsoft Office'],['🛠','AI tools']
+              ['🖥️','Course Lab'],['📊','LMS'],['💼','Microsoft Office']
             ].map(([ico, name]) => (
               <ToolChip key={name} ico={ico} name={name} />
             ))}
@@ -250,12 +261,28 @@ function ExpCard({ date, badge, badgeLabel, company, title, duties }) {
   )
 }
 
-function PortCard({ grad, emoji, type, title, desc, tags, gameLink='', sbLink='', vidLink='' }) {
+// A link is usable only when it is a real http(s) address (no spaces).
+function isUrl(u) {
+  if (!u || /\s/.test(u)) return false
+  try { return /^https?:$/.test(new URL(u).protocol) } catch { return false }
+}
+
+function PortCard({ grad, emoji, type, title, desc, tags, gameLink='', gameLabel='🎮 Game', sbLink='', vidLink='' }) {
   const editLink = (e, type) => {
-    if (!document.body.classList.contains('editing')) { e.preventDefault(); return }
+    const a = e.currentTarget
+    // Visitors: real links open in a new tab; empty ones do nothing.
+    if (!document.body.classList.contains('editing')) { if (a.classList.contains('empty')) e.preventDefault(); return }
     e.preventDefault()
     const url = prompt(`Enter ${type} URL:`)
-    if (url) { e.target.href = url; e.target.target = '_blank'; e.target.classList.remove('empty') }
+    if (url) { a.href = url; a.target = '_blank'; a.rel = 'noreferrer'; a.classList.remove('empty') }
+  }
+  const link = (href, dataType, label, kind) => {
+    const ok = isUrl(href)
+    return (
+      <a href={ok ? href : '#'} className={`port-link${ok ? '' : ' empty'}`} data-type={dataType}
+        target={ok ? '_blank' : undefined} rel={ok ? 'noreferrer' : undefined}
+        onClick={e => editLink(e, kind)}>{label}</a>
+    )
   }
   return (
     <div className="port-card">
@@ -266,9 +293,9 @@ function PortCard({ grad, emoji, type, title, desc, tags, gameLink='', sbLink=''
         <div className="port-title">{title}</div>
         <div className="port-desc">{desc}</div>
         <div className="port-links">
-          <a href={gameLink||'#'} className={`port-link${gameLink?'':' empty'}`} data-type="game" onClick={e=>editLink(e,'Game')}>🎮 Game</a>
-          <a href={sbLink||'#'} className={`port-link${sbLink?'':' empty'}`} data-type="storyboard" onClick={e=>editLink(e,'Storyboard')}>📄 Storyboard</a>
-          <a href={vidLink||'#'} className={`port-link${vidLink?'':' empty'}`} data-type="video" onClick={e=>editLink(e,'Video')}>▶ Video</a>
+          {link(gameLink, 'game', gameLabel, 'Game')}
+          {link(sbLink, 'storyboard', '📄 Storyboard', 'Storyboard')}
+          {link(vidLink, 'video', '▶ Video', 'Video')}
         </div>
         <div className="port-tags">{tags.map(t=><span key={t} className="port-tag">{t}</span>)}</div>
       </div>
