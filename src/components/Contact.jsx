@@ -8,8 +8,9 @@ export default function Contact() {
   return (
     <div className="sec" id="contact">
       <div className="wrap">
-        <div className={styles.eye}>06 / Contact</div>
-        <h2 className={styles.title}>Let's Work<br />Together</h2>
+        <div className={styles.eye}>06</div>
+        <h2 className={styles.title}>Let's Work Together</h2>
+        <p className={styles.sub}>Have a Project in Mind? Let's Connect</p>
         <div className={styles.grid}>
           {/* LEFT — contact details from .env */}
           <div>

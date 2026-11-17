@@ -65,8 +65,9 @@ export default function App() {
       {/* ABOUT */}
       <div className="sec alt" id="about">
         <div className="wrap">
-          <div className="s-eye" data-editable="true">01 / About</div>
-          <h2 className="s-title" data-editable="true">Designing Learning<br />That Actually Works</h2>
+          <div className="s-eye" data-editable="true">01</div>
+          <h2 className="s-title" data-editable="true">About Me</h2>
+          <p className="s-sub" data-editable="true">Designing Learning That Actually Works</p>
           <div className="about-grid">
             <div>
               <p className="about-p" id="aboutP1" data-editable="true">
@@ -116,8 +117,9 @@ export default function App() {
       {/* EXPERIENCE */}
       <div className="sec" id="experience">
         <div className="wrap">
-          <div className="s-eye" data-editable="true">02 / Experience</div>
-          <h2 className="s-title" data-editable="true">Where I've Built Things</h2>
+          <div className="s-eye" data-editable="true">02</div>
+          <h2 className="s-title" data-editable="true">Professional Experience</h2>
+          <p className="s-sub" data-editable="true">Where I've Made an Impact</p>
           <div className="add-ctrl" style={{ textAlign: 'right', marginBottom: '1rem' }}>
             <button className="add-btn-sm" onClick={() => openExpModal()}>+ Add Position</button>
           </div>
@@ -139,8 +141,9 @@ export default function App() {
       {/* PORTFOLIO */}
       <div className="sec alt" id="portfolio">
         <div className="wrap">
-          <div className="s-eye" data-editable="true">03 / Selected Work</div>
-          <h2 className="s-title" data-editable="true">Storyboards, Games<br />&amp; Learning Experiences</h2>
+          <div className="s-eye" data-editable="true">03</div>
+          <h2 className="s-title" data-editable="true">Featured Projects</h2>
+          <p className="s-sub" data-editable="true">Storyboards, Games &amp; Interactive Learning Experiences</p>
           <div className="port-grid" id="portGrid">
             <PortCard grad="g6" emoji="🌌" img="/thumbs/cosmic-journey.jpg" type="3D Interactive" title="Cosmic Journey: From Galaxies to Moons"
               desc="A scientific 3D journey from the Local Group of galaxies through the Milky Way to the Solar System's planets and moons, running on a live real-time clock."
@@ -185,8 +188,9 @@ export default function App() {
       {/* COURSES */}
       <div className="sec" id="courses">
         <div className="wrap">
-          <div className="s-eye" data-editable="true">04 / Learning</div>
-          <h2 className="s-title" data-editable="true">Courses &amp;<br />Certifications</h2>
+          <div className="s-eye" data-editable="true">04</div>
+          <h2 className="s-title" data-editable="true">Courses &amp; Certifications</h2>
+          <p className="s-sub" data-editable="true">Continuous Learning &amp; Professional Growth</p>
           <div className="courses-grid" id="coursesGrid">
             <CourseCard platform="Meska AI" title="AI Training" />
             <CourseCard platform="MaharaTech" title="Instructional Design · E-learning Fundamentals · Gamification in eLearning · Computer Network Fundamentals" />
@@ -211,8 +215,9 @@ export default function App() {
       {/* TOOLS */}
       <div className="sec alt" id="tools">
         <div className="wrap">
-          <div className="s-eye" data-editable="true">05 / Toolkit</div>
-          <h2 className="s-title" data-editable="true">Tools &amp;<br />Software</h2>
+          <div className="s-eye" data-editable="true">05</div>
+          <h2 className="s-title" data-editable="true">Tools &amp; Technologies</h2>
+          <p className="s-sub" data-editable="true">The Tools Behind My Work</p>
           <div className="tools-wrap" id="toolsWrap">
             {[['🤖','AI tools'],['🎯','Articulate Storyline'],['🎬','Adobe After Effects'],['✂️','Adobe Premiere'],
               ['🖼️','Adobe Photoshop'],['✒️','Adobe Illustrator'],['📄','Adobe InDesign'],
