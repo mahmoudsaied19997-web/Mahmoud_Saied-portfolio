@@ -157,7 +157,8 @@ export default function App() {
             <PortCard grad="g5" emoji="🏍️" type="3D Educational Game" title="Race of Knowledge: Answer, Upgrade, Win"
               desc="A 3D racing game where every correct answer installs a real part on the learner's motorcycle and every wrong one helps the rival, ending in a cinematic race decided by performance."
               tags={['3D Game','Social Studies','AI-Assisted']}
-              gameLink="https://race-of-knowledge.vercel.app" />
+              gameLink="https://race-of-knowledge.vercel.app"
+              sbLink="https://mahmoud-saied-portfolio.vercel.app/scripts/race-of-knowledge-storyboard.pdf" />
             <PortCard grad="g1" emoji="🌍" type="Educational Game" title="The Pearl Hunting Game" desc="Collect electricity from the grid by answering the questions correctly." tags={['Gamification','Storyboard','Geography']}  sbLink="https://oman_soc - Google Drive"/>
             <PortCard grad="g2" emoji="🏛️" type="E-Learning Module" title="African Union & Economic Blocs" desc="Flashcard sets and interactive scenarios covering African economic blocs with varied patterns." tags={['Flashcards','Scenario','Africa']} />
             <PortCard grad="g3" emoji="🎙️" type="Voiceover Script" title="Colloquial Arabic Scripts" desc="Converting formal texts into scene-structured colloquial scripts with transition phrases for video production." tags={['Scripting','Voiceover','Video']} />
