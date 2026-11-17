@@ -64,6 +64,11 @@
   box-shadow: 0 20px 48px rgba(0,0,0,.5), 0 0 24px rgba(37,99,235,.1); }
 .port-thumb { height: 170px; display: flex; align-items: center; justify-content: center;
   font-size: 3rem; position: relative; overflow: hidden; }
+.port-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .6s ease; }
+.port-card:hover .port-img { transform: scale(1.06); }
+.port-thumb.has-img::after { content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to bottom, rgba(12,15,26,0) 60%, rgba(12,15,26,.35)); }
 .port-type-tag { position: absolute; top: .7rem; left: .7rem; font-family: 'JetBrains Mono', monospace;
   font-size: .6rem; color: var(--sky); background: rgba(12,15,26,.85); border: 1px solid var(--border);
   padding: .18rem .55rem; border-radius: .25rem; letter-spacing: .07em; text-transform: uppercase; z-index: 2; }

@@ -21,7 +21,7 @@ function saveAll() {
       coursesGrid: document.getElementById('coursesGrid')?.innerHTML || '',
       toolsWrap: document.getElementById('toolsWrap')?.innerHTML || '',
     }
-    localStorage.setItem('msPort_v4', JSON.stringify(data))
+    localStorage.setItem('msPort_v5', JSON.stringify(data))
     showToast('✓ Saved!')
   } catch (e) {
     showToast('Could not save — try again')
@@ -30,7 +30,7 @@ function saveAll() {
 
 function loadSaved() {
   try {
-    const raw = localStorage.getItem('msPort_v4')
+    const raw = localStorage.getItem('msPort_v5')
     if (!raw) return
     const d = JSON.parse(raw)
     const set = (id, val) => { const el = document.getElementById(id); if (el && val) el.innerHTML = val }
@@ -142,37 +142,38 @@ export default function App() {
           <div className="s-eye" data-editable="true">03 / Selected Work</div>
           <h2 className="s-title" data-editable="true">Storyboards, Games<br />&amp; Learning Experiences</h2>
           <div className="port-grid" id="portGrid">
-            <PortCard grad="g6" emoji="🌌" type="3D Interactive" title="Cosmic Journey: From Galaxies to Moons"
+            <PortCard grad="g6" emoji="🌌" img="/thumbs/cosmic-journey.jpg" type="3D Interactive" title="Cosmic Journey: From Galaxies to Moons"
               desc="A scientific 3D journey from the Local Group of galaxies through the Milky Way to the Solar System's planets and moons, running on a live real-time clock."
               tags={['3D Interactive','Astronomy','AI-Assisted']}
               gameLink="https://cosmic-journey-rho.vercel.app" gameLabel="🚀 Interactive"
               sbLink="https://mahmoud-saied-portfolio.vercel.app/scripts/cosmic-journey-storyboard.pdf" />
-            <PortCard grad="g1" emoji="🪐" type="3D Interactive" title="Solar Odyssey: Space Explorer"
+            <PortCard grad="g1" emoji="🪐" img="/thumbs/solar-odyssey.jpg" type="3D Interactive" title="Solar Odyssey: Space Explorer"
               desc="Explore the Sun, the planets and their major moons in 3D using NASA JPL data, then zoom out to the Milky Way and nearby galaxies, with a full Arabic interface."
               tags={['3D Interactive','Solar System','AI-Assisted']}
               gameLink="https://rihla-space-explorer.vercel.app" gameLabel="🚀 Interactive"
               sbLink="https://mahmoud-saied-portfolio.vercel.app/scripts/solar-odyssey-storyboard.pdf" />
-            <PortCard grad="g2" emoji="🕸️" type="3D Educational Game" title="Nassaj: Threads of Knowledge"
+            <PortCard grad="g2" emoji="🕸️" img="/thumbs/nassaj.jpg" type="3D Educational Game" title="Nassaj: Threads of Knowledge"
               desc="A 3D voxel adventure where learners guide Nassaj the spider across 10 floating islands, answering science questions to weave bridges and bring light back to the garden."
               tags={['3D Game','Science','AI-Assisted']}
               gameLink="https://khuyoot-al-maarifa.vercel.app"
               sbLink="https://mahmoud-saied-portfolio.vercel.app/scripts/nassaj-threads-of-knowledge-storyboard.pdf" />
-            <PortCard grad="g5" emoji="🏍️" type="3D Educational Game" title="Race of Knowledge: Answer, Upgrade, Win"
+            <PortCard grad="g5" emoji="🏍️" img="/thumbs/race-of-knowledge.jpg" type="3D Educational Game" title="Race of Knowledge: Answer, Upgrade, Win"
               desc="A 3D racing game where every correct answer installs a real part on the learner's motorcycle and every wrong one helps the rival, ending in a cinematic race decided by performance."
               tags={['3D Game','Social Studies','AI-Assisted']}
               gameLink="https://race-of-knowledge.vercel.app"
               sbLink="https://mahmoud-saied-portfolio.vercel.app/scripts/race-of-knowledge-storyboard.pdf" />
-            <PortCard grad="g4" emoji="📖" type="2D Educational Game" title="Quest for the Lost Book"
+            <PortCard grad="g4" emoji="📖" img="/thumbs/quest-for-the-lost-book.jpg" type="2D Educational Game" title="Quest for the Lost Book"
               desc="A 2D pixel-art adventure in first person: build a raft, climb the mountain and rescue a friend, where every tool is unlocked by answering a school question in Arabic, Science, Math or English."
               tags={['2D Game','Multi-subject','AI-Assisted']}
               gameLink="https://quest-for-knowledge-2d.vercel.app"
               sbLink="https://mahmoud-saied-portfolio.vercel.app/scripts/quest-for-the-lost-book-storyboard.pdf" />
-            <PortCard grad="g1" emoji="🌍" type="Educational Game" title="The Pearl Hunting Game" desc="Collect electricity from the grid by answering the questions correctly." tags={['Gamification','Storyboard','Geography']}  sbLink="https://oman_soc - Google Drive"/>
-            <PortCard grad="g2" emoji="🏛️" type="E-Learning Module" title="African Union & Economic Blocs" desc="Flashcard sets and interactive scenarios covering African economic blocs with varied patterns." tags={['Flashcards','Scenario','Africa']} />
-            <PortCard grad="g3" emoji="🎙️" type="Voiceover Script" title="Colloquial Arabic Scripts" desc="Converting formal texts into scene-structured colloquial scripts with transition phrases for video production." tags={['Scripting','Voiceover','Video']} />
-            <PortCard grad="g4" emoji="📊" type="Simulation" title="Africa Population Growth Sim" desc="Resource management game examining population growth causes through decision-making mechanics." tags={['Simulation','Decision-Making','Demographics']} />
-            <PortCard grad="g5" emoji="🏺" type="Storyboard" title="Egypt's Civilizational Role" desc="Storyboard and flashcard series exploring Egypt's cultural and historical influence across Africa." tags={['Storyboard','Flashcards','History']} />
-            <PortCard grad="g6" emoji="🏙️" type="Interactive Scenario" title="Nigeria City Dialogue Scenarios" desc="Dialogue-based interactive scenarios addressing social issues with visual feedback systems." tags={['Dialogue','Scenario','Social Studies']} />
+            {/* Two reserved slots for the next science interactives (to be filled in with their links and storyboards). */}
+            <PortCard grad="g3" emoji="🧪" type="Interactive" title="Coming Soon"
+              desc="A new science interactive is on its way. Its play link and storyboard will be added here."
+              tags={['Interactive','Science']} gameLabel="🚀 Interactive" />
+            <PortCard grad="g6" emoji="🔬" type="Interactive" title="Coming Soon"
+              desc="A new science interactive is on its way. Its play link and storyboard will be added here."
+              tags={['Interactive','Science']} gameLabel="🚀 Interactive" />
             <div className="add-card port-card" style={{ minHeight: 280 }} onClick={() => alert('Add new project — use edit mode')}>
               <div className="add-icon-circle">+</div>
               <span style={{ fontSize: '.85rem' }}>Add New Project</span>
@@ -280,7 +281,7 @@ function isUrl(u) {
   try { return /^https?:$/.test(new URL(u).protocol) } catch { return false }
 }
 
-function PortCard({ grad, emoji, type, title, desc, tags, gameLink='', gameLabel='🎮 Game', sbLink='', vidLink='' }) {
+function PortCard({ grad, emoji, img='', type, title, desc, tags, gameLink='', gameLabel='🎮 Game', sbLink='', vidLink='' }) {
   const editLink = (e, type) => {
     const a = e.currentTarget
     // Visitors: real links open in a new tab; empty ones do nothing.
@@ -299,7 +300,10 @@ function PortCard({ grad, emoji, type, title, desc, tags, gameLink='', gameLabel
   }
   return (
     <div className="port-card">
-      <div className={`port-thumb ${grad}`}>{emoji}
+      <div className={`port-thumb ${grad}${img ? ' has-img' : ''}`}>
+        {img
+          ? <img className="port-img" src={img} alt={`${title} screenshot`} loading="lazy" />
+          : emoji}
         <span className="port-type-tag">{type}</span>
       </div>
       <div className="port-body">
