@@ -170,13 +170,16 @@ export default function App() {
               tags={['2D Game','Multi-subject','AI-Assisted']}
               gameLink="https://quest-for-knowledge-2d.vercel.app"
               sbLink="https://mahmoud-saied-portfolio.vercel.app/scripts/quest-for-the-lost-book-storyboard.pdf" />
-            {/* Two reserved slots for the next science interactives (to be filled in with their links and storyboards). */}
-            <PortCard grad="g3" emoji="🧪" type="Interactive" title="Coming Soon"
-              desc="A new science interactive is on its way. Its play link and storyboard will be added here."
-              tags={['Interactive','Science']} gameLabel="🚀 Interactive" />
-            <PortCard grad="g6" emoji="🔬" type="Interactive" title="Coming Soon"
-              desc="A new science interactive is on its way. Its play link and storyboard will be added here."
-              tags={['Interactive','Science']} gameLabel="🚀 Interactive" />
+            <PortCard grad="g3" emoji="🧪" img="/thumbs/acid-rain-plants-lab.jpg" type="Interactive Lab" title="Acid Rain & Plants: Virtual Science Lab"
+              desc="Learners plant two seedlings, water one with tap water and the other with lemon juice to stand in for acid rain, predict the outcome, then watch one plant thrive and the other wilt."
+              tags={['Interactive','Science','AI-Assisted']}
+              gameLink="https://acid-rain-plants-lab.vercel.app" gameLabel="🚀 Interactive"
+              sbLink="https://mahmoud-saied-portfolio.vercel.app/scripts/acid-rain-and-plants-lab-storyboard.pdf" />
+            <PortCard grad="g6" emoji="🕯️" img="/thumbs/air-combustion-lab.jpg" type="Interactive Lab" title="Air & Combustion: Virtual Science Lab"
+              desc="A candle-in-a-jar lab: learners choose the right tools, run three experiments with different amounts of air, record what the flame does and conclude why burning needs air."
+              tags={['Interactive','Science','AI-Assisted']}
+              gameLink="https://air-combustion-lab.vercel.app" gameLabel="🚀 Interactive"
+              sbLink="https://mahmoud-saied-portfolio.vercel.app/scripts/air-and-combustion-lab-storyboard.pdf" />
             <div className="add-card port-card" style={{ minHeight: 280 }} onClick={() => alert('Add new project — use edit mode')}>
               <div className="add-icon-circle">+</div>
               <span style={{ fontSize: '.85rem' }}>Add New Project</span>
